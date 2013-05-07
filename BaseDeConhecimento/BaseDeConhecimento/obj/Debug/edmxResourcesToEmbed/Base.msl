@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BaseDeConhecimentoModelStoreContainer" CdmEntityContainer="BaseDeConhecimentoEntities">
+    <EntitySetMapping Name="Aspectos">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.Aspectos">
+        <MappingFragment StoreEntitySet="Aspectos">
+          <ScalarProperty Name="idAspecto" ColumnName="idAspecto" />
+          <ScalarProperty Name="codigoIdentificacao" ColumnName="codigoIdentificacao" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspectosPorProjeto">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.AspectosPorProjeto">
+        <MappingFragment StoreEntitySet="AspectosPorProjeto">
+          <ScalarProperty Name="idProjeto" ColumnName="idProjeto" />
+          <ScalarProperty Name="idAspecto" ColumnName="idAspecto" />
+          <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Atividades">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.Atividades">
+        <MappingFragment StoreEntitySet="Atividades">
+          <ScalarProperty Name="idAtividade" ColumnName="idAtividade" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="tempoEstimado" ColumnName="tempoEstimado" />
+          <ScalarProperty Name="tempoExecucao" ColumnName="tempoExecucao" />
+          <ScalarProperty Name="complexidade" ColumnName="complexidade" />
+          <ScalarProperty Name="escalaDeImportancia" ColumnName="escalaDeImportancia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicoesAprendidas">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.LicoesAprendidas">
+        <MappingFragment StoreEntitySet="LicoesAprendidas">
+          <ScalarProperty Name="idProjeto" ColumnName="idProjeto" />
+          <ScalarProperty Name="idLicaoAprendida" ColumnName="idLicaoAprendida" />
+          <ScalarProperty Name="avaliacao" ColumnName="avaliacao" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="acao" ColumnName="acao" />
+          <ScalarProperty Name="responsavel" ColumnName="responsavel" />
+          <ScalarProperty Name="dataCadastro" ColumnName="dataCadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notas">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.Notas">
+        <MappingFragment StoreEntitySet="Notas">
+          <ScalarProperty Name="idNota" ColumnName="idNota" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="dataCriacao" ColumnName="dataCriacao" />
+          <ScalarProperty Name="idAtividade" ColumnName="idAtividade" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projeto">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.Projeto">
+        <MappingFragment StoreEntitySet="Projeto">
+          <ScalarProperty Name="idProjeto" ColumnName="idProjeto" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="dataPrevistaInicio" ColumnName="dataPrevistaInicio" />
+          <ScalarProperty Name="dataPrevistaTermino" ColumnName="dataPrevistaTermino" />
+          <ScalarProperty Name="custoPrevisto" ColumnName="custoPrevisto" />
+          <ScalarProperty Name="custoReal" ColumnName="custoReal" />
+          <ScalarProperty Name="dataInicio" ColumnName="dataInicio" />
+          <ScalarProperty Name="dataFim" ColumnName="dataFim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requisito">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.Requisito">
+        <MappingFragment StoreEntitySet="Requisito">
+          <ScalarProperty Name="idRequisito" ColumnName="idRequisito" />
+          <ScalarProperty Name="idProjeto" ColumnName="idProjeto" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="criterioAceitacao" ColumnName="criterioAceitacao" />
+          <ScalarProperty Name="bugs" ColumnName="bugs" />
+          <ScalarProperty Name="qtdComunicacaoExterna" ColumnName="qtdComunicacaoExterna" />
+          <ScalarProperty Name="dataCadastro" ColumnName="dataCadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tags">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.Tags">
+        <MappingFragment StoreEntitySet="Tags">
+          <ScalarProperty Name="idTag" ColumnName="idTag" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tecnologia">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.Tecnologia">
+        <MappingFragment StoreEntitySet="Tecnologia">
+          <ScalarProperty Name="idTecnologia" ColumnName="idTecnologia" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TecnologiaPorUsuario">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.TecnologiaPorUsuario">
+        <MappingFragment StoreEntitySet="TecnologiaPorUsuario">
+          <ScalarProperty Name="idTecnologiaPorUsuario" ColumnName="idTecnologiaPorUsuario" />
+          <ScalarProperty Name="idTecnologia" ColumnName="idTecnologia" />
+          <ScalarProperty Name="idProjeto" ColumnName="idProjeto" />
+          <ScalarProperty Name="nivelDeConhecimento" ColumnName="nivelDeConhecimento" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="BaseDeConhecimentoModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TagsAtividade" TypeName="BaseDeConhecimentoModel.TagsAtividade" StoreEntitySet="TagsAtividade">
+      <EndProperty Name="Atividades">
+        <ScalarProperty Name="idAtividade" ColumnName="idAtividade" />
+      </EndProperty>
+      <EndProperty Name="Tags">
+        <ScalarProperty Name="idTag" ColumnName="idTag" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TagsProjeto" TypeName="BaseDeConhecimentoModel.TagsProjeto" StoreEntitySet="TagsProjeto">
+      <EndProperty Name="Projeto">
+        <ScalarProperty Name="idProjeto" ColumnName="idProjeto" />
+      </EndProperty>
+      <EndProperty Name="Tags">
+        <ScalarProperty Name="idTag" ColumnName="idTag" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

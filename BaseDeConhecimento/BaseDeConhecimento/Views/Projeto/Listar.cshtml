@@ -1,0 +1,82 @@
+﻿@model IEnumerable<BaseDeConhecimento.Dtos.ProjetoDTO>
+
+@{
+    ViewBag.Title = "Listar2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listar2</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Cadastrar")
+</p>
+<table>
+    <tr>
+        <th>
+            
+        </th>
+        <th>
+            Título
+        </th>
+        <th>
+            Descrição
+        </th>
+        <th>
+            Data prevista inicio
+        </th>
+        <th>
+            Data prevista término
+        </th>
+        <th>
+            Custo previsto
+        </th>
+        <th>
+            Custo real
+        </th>
+        <th>
+            Data inicio
+        </th>
+        <th>
+            Data fim
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idProjeto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataPrevistaInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataPrevistaTermino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.custoPrevisto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.custoReal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataFim)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

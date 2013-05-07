@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaseDeConhecimentoModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BaseDeConhecimentoEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Aspectos" EntityType="BaseDeConhecimentoModel.Aspectos" />
+    <EntitySet Name="AspectosPorProjeto" EntityType="BaseDeConhecimentoModel.AspectosPorProjeto" />
+    <EntitySet Name="Atividades" EntityType="BaseDeConhecimentoModel.Atividades" />
+    <EntitySet Name="LicoesAprendidas" EntityType="BaseDeConhecimentoModel.LicoesAprendidas" />
+    <EntitySet Name="Notas" EntityType="BaseDeConhecimentoModel.Notas" />
+    <EntitySet Name="Projeto" EntityType="BaseDeConhecimentoModel.Projeto" />
+    <EntitySet Name="Requisito" EntityType="BaseDeConhecimentoModel.Requisito" />
+    <EntitySet Name="Tags" EntityType="BaseDeConhecimentoModel.Tags" />
+    <EntitySet Name="Tecnologia" EntityType="BaseDeConhecimentoModel.Tecnologia" />
+    <EntitySet Name="TecnologiaPorUsuario" EntityType="BaseDeConhecimentoModel.TecnologiaPorUsuario" />
+    <EntitySet Name="Usuario" EntityType="BaseDeConhecimentoModel.Usuario" />
+    <AssociationSet Name="FK_AspectosPorProjeto_Aspectos" Association="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Aspectos">
+      <End Role="Aspectos" EntitySet="Aspectos" />
+      <End Role="AspectosPorProjeto" EntitySet="AspectosPorProjeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspectosPorProjeto_Projeto" Association="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Projeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="AspectosPorProjeto" EntitySet="AspectosPorProjeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notas_Atividades" Association="BaseDeConhecimentoModel.FK_Notas_Atividades">
+      <End Role="Atividades" EntitySet="Atividades" />
+      <End Role="Notas" EntitySet="Notas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notas_Usuario" Association="BaseDeConhecimentoModel.FK_Notas_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Notas" EntitySet="Notas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TecnologiaPorUsuario_Projeto" Association="BaseDeConhecimentoModel.FK_TecnologiaPorUsuario_Projeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="TecnologiaPorUsuario" EntitySet="TecnologiaPorUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TecnologiaPorUsuario_Tecnologia" Association="BaseDeConhecimentoModel.FK_TecnologiaPorUsuario_Tecnologia">
+      <End Role="Tecnologia" EntitySet="Tecnologia" />
+      <End Role="TecnologiaPorUsuario" EntitySet="TecnologiaPorUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TecnologiaPorUsuario_Usuario" Association="BaseDeConhecimentoModel.FK_TecnologiaPorUsuario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TecnologiaPorUsuario" EntitySet="TecnologiaPorUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="TagsAtividade" Association="BaseDeConhecimentoModel.TagsAtividade">
+      <End Role="Atividades" EntitySet="Atividades" />
+      <End Role="Tags" EntitySet="Tags" />
+    </AssociationSet>
+    <AssociationSet Name="TagsProjeto" Association="BaseDeConhecimentoModel.TagsProjeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="Tags" EntitySet="Tags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LicoesAprendidas_Projeto" Association="BaseDeConhecimentoModel.FK_LicoesAprendidas_Projeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="LicoesAprendidas" EntitySet="LicoesAprendidas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requisito_Projeto" Association="BaseDeConhecimentoModel.FK_Requisito_Projeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="Requisito" EntitySet="Requisito" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Aspectos">
+    <Key>
+      <PropertyRef Name="idAspecto" />
+    </Key>
+    <Property Name="idAspecto" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="codigoIdentificacao" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="tipo" Type="Int32" />
+    <Property Name="descricao" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="AspectosPorProjeto" Relationship="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Aspectos" FromRole="Aspectos" ToRole="AspectosPorProjeto" />
+  </EntityType>
+  <EntityType Name="AspectosPorProjeto">
+    <Key>
+      <PropertyRef Name="idProjeto" />
+      <PropertyRef Name="idAspecto" />
+    </Key>
+    <Property Name="idProjeto" Type="Int32" Nullable="false" />
+    <Property Name="idAspecto" Type="Int32" Nullable="false" />
+    <Property Name="prioridade" Type="Int32" />
+    <Property Name="peso" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Aspectos" Relationship="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Aspectos" FromRole="AspectosPorProjeto" ToRole="Aspectos" />
+    <NavigationProperty Name="Projeto" Relationship="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Projeto" FromRole="AspectosPorProjeto" ToRole="Projeto" />
+  </EntityType>
+  <EntityType Name="Atividades">
+    <Key>
+      <PropertyRef Name="idAtividade" />
+    </Key>
+    <Property Name="idAtividade" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="descricao" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="tempoEstimado" Type="Time" Precision="7" />
+    <Property Name="tempoExecucao" Type="Time" Precision="7" />
+    <Property Name="complexidade" Type="Int32" />
+    <Property Name="escalaDeImportancia" Type="Int32" />
+    <NavigationProperty Name="Notas" Relationship="BaseDeConhecimentoModel.FK_Notas_Atividades" FromRole="Atividades" ToRole="Notas" />
+    <NavigationProperty Name="Tags" Relationship="BaseDeConhecimentoModel.TagsAtividade" FromRole="Atividades" ToRole="Tags" />
+  </EntityType>
+  <EntityType Name="LicoesAprendidas">
+    <Key>
+      <PropertyRef Name="idLicaoAprendida" />
+    </Key>
+    <Property Name="idLicaoAprendida" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="avaliacao" Type="Int32" />
+    <Property Name="descricao" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="acao" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="responsavel" Type="Int32" />
+    <Property Name="dataCadastro" Type="DateTime" Precision="0" />
+    <Property Type="Int32" Name="idProjeto" />
+    <NavigationProperty Name="Projeto" Relationship="BaseDeConhecimentoModel.FK_LicoesAprendidas_Projeto" FromRole="LicoesAprendidas" ToRole="Projeto" />
+  </EntityType>
+  <EntityType Name="Notas">
+    <Key>
+      <PropertyRef Name="idNota" />
+    </Key>
+    <Property Name="idNota" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nota" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="dataCriacao" Type="DateTime" Precision="3" />
+    <Property Name="idAtividade" Type="Int32" />
+    <Property Name="idUsuario" Type="Int32" />
+    <NavigationProperty Name="Atividades" Relationship="BaseDeConhecimentoModel.FK_Notas_Atividades" FromRole="Notas" ToRole="Atividades" />
+    <NavigationProperty Name="Usuario" Relationship="BaseDeConhecimentoModel.FK_Notas_Usuario" FromRole="Notas" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Projeto">
+    <Key>
+      <PropertyRef Name="idProjeto" />
+    </Key>
+    <Property Name="idProjeto" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="descricao" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="dataPrevistaInicio" Type="DateTime" Precision="0" />
+    <Property Name="dataPrevistaTermino" Type="DateTime" Precision="0" />
+    <Property Name="custoPrevisto" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="custoReal" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dataInicio" Type="DateTime" Precision="0" />
+    <Property Name="dataFim" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="AspectosPorProjeto" Relationship="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Projeto" FromRole="Projeto" ToRole="AspectosPorProjeto" />
+    <NavigationProperty Name="TecnologiaPorUsuario" Relationship="BaseDeConhecimentoModel.FK_TecnologiaPorUsuario_Projeto" FromRole="Projeto" ToRole="TecnologiaPorUsuario" />
+    <NavigationProperty Name="Tags" Relationship="BaseDeConhecimentoModel.TagsProjeto" FromRole="Projeto" ToRole="Tags" />
+    <NavigationProperty Name="LicoesAprendidas" Relationship="BaseDeConhecimentoModel.FK_LicoesAprendidas_Projeto" FromRole="Projeto" ToRole="LicoesAprendidas" />
+    <NavigationProperty Name="Requisito" Relationship="BaseDeConhecimentoModel.FK_Requisito_Projeto" FromRole="Projeto" ToRole="Requisito" />
+  </EntityType>
+  <EntityType Name="Requisito">
+    <Key>
+      <PropertyRef Name="idRequisito" />
+    </Key>
+    <Property Name="idRequisito" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idProjeto" Type="Int32" />
+    <Property Name="nome" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="descricao" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="criterioAceitacao" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="bugs" Type="Int32" />
+    <Property Name="qtdComunicacaoExterna" Type="Int32" />
+    <Property Name="dataCadastro" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Projeto" Relationship="BaseDeConhecimentoModel.FK_Requisito_Projeto" FromRole="Requisito" ToRole="Projeto" />
+  </EntityType>
+  <EntityType Name="Tags">
+    <Key>
+      <PropertyRef Name="idTag" />
+    </Key>
+    <Property Name="idTag" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="descricao" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Atividades" Relationship="BaseDeConhecimentoModel.TagsAtividade" FromRole="Tags" ToRole="Atividades" />
+    <NavigationProperty Name="Projeto" Relationship="BaseDeConhecimentoModel.TagsProjeto" FromRole="Tags" ToRole="Projeto" />
+  </EntityType>
+  <EntityType Name="Tecnologia">
+    <Key>
+      <PropertyRef Name="idTecnologia" />
+    </Key>
+    <Property Name="idTecnologia" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TecnologiaPorUsuario" Relationship="BaseDeConhecimentoModel.FK_TecnologiaPorUsuario_Tecnologia" FromRole="Tecnologia" ToRole="TecnologiaPorUsuario" />
+  </EntityType>
+  <EntityType Name="TecnologiaPorUsuario">
+    <Key>
+      <PropertyRef Name="idTecnologiaPorUsuario" />
+    </Key>
+    <Property Name="idTecnologiaPorUsuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idTecnologia" Type="Int32" />
+    <Property Name="idProjeto" Type="Int32" />
+    <Property Name="nivelDeConhecimento" Type="Int32" />
+    <Property Name="idUsuario" Type="Int32" />
+    <NavigationProperty Name="Projeto" Relationship="BaseDeConhecimentoModel.FK_TecnologiaPorUsuario_Projeto" FromRole="TecnologiaPorUsuario" ToRole="Projeto" />
+    <NavigationProperty Name="Tecnologia" Relationship="BaseDeConhecimentoModel.FK_TecnologiaPorUsuario_Tecnologia" FromRole="TecnologiaPorUsuario" ToRole="Tecnologia" />
+    <NavigationProperty Name="Usuario" Relationship="BaseDeConhecimentoModel.FK_TecnologiaPorUsuario_Usuario" FromRole="TecnologiaPorUsuario" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Notas" Relationship="BaseDeConhecimentoModel.FK_Notas_Usuario" FromRole="Usuario" ToRole="Notas" />
+    <NavigationProperty Name="TecnologiaPorUsuario" Relationship="BaseDeConhecimentoModel.FK_TecnologiaPorUsuario_Usuario" FromRole="Usuario" ToRole="TecnologiaPorUsuario" />
+  </EntityType>
+  <Association Name="FK_AspectosPorProjeto_Aspectos">
+    <End Role="Aspectos" Type="BaseDeConhecimentoModel.Aspectos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspectosPorProjeto" Type="BaseDeConhecimentoModel.AspectosPorProjeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aspectos">
+        <PropertyRef Name="idAspecto" />
+      </Principal>
+      <Dependent Role="AspectosPorProjeto">
+        <PropertyRef Name="idAspecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspectosPorProjeto_Projeto">
+    <End Role="Projeto" Type="BaseDeConhecimentoModel.Projeto" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspectosPorProjeto" Type="BaseDeConhecimentoModel.AspectosPorProjeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="idProjeto" />
+      </Principal>
+      <Dependent Role="AspectosPorProjeto">
+        <PropertyRef Name="idProjeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notas_Atividades">
+    <End Role="Atividades" Type="BaseDeConhecimentoModel.Atividades" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Notas" Type="BaseDeConhecimentoModel.Notas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Atividades">
+        <PropertyRef Name="idAtividade" />
+      </Principal>
+      <Dependent Role="Notas">
+        <PropertyRef Name="idAtividade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notas_Usuario">
+    <End Role="Usuario" Type="BaseDeConhecimentoModel.Usuario" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Notas" Type="BaseDeConhecimentoModel.Notas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Notas">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TecnologiaPorUsuario_Projeto">
+    <End Role="Projeto" Type="BaseDeConhecimentoModel.Projeto" Multiplicity="0..1" />
+    <End Role="TecnologiaPorUsuario" Type="BaseDeConhecimentoModel.TecnologiaPorUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="idProjeto" />
+      </Principal>
+      <Dependent Role="TecnologiaPorUsuario">
+        <PropertyRef Name="idProjeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TecnologiaPorUsuario_Tecnologia">
+    <End Role="Tecnologia" Type="BaseDeConhecimentoModel.Tecnologia" Multiplicity="0..1" />
+    <End Role="TecnologiaPorUsuario" Type="BaseDeConhecimentoModel.TecnologiaPorUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tecnologia">
+        <PropertyRef Name="idTecnologia" />
+      </Principal>
+      <Dependent Role="TecnologiaPorUsuario">
+        <PropertyRef Name="idTecnologia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TecnologiaPorUsuario_Usuario">
+    <End Role="Usuario" Type="BaseDeConhecimentoModel.Usuario" Multiplicity="0..1" />
+    <End Role="TecnologiaPorUsuario" Type="BaseDeConhecimentoModel.TecnologiaPorUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="TecnologiaPorUsuario">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TagsAtividade">
+    <End Role="Atividades" Type="BaseDeConhecimentoModel.Atividades" Multiplicity="*" />
+    <End Role="Tags" Type="BaseDeConhecimentoModel.Tags" Multiplicity="*" />
+  </Association>
+  <Association Name="TagsProjeto">
+    <End Role="Projeto" Type="BaseDeConhecimentoModel.Projeto" Multiplicity="*" />
+    <End Role="Tags" Type="BaseDeConhecimentoModel.Tags" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_LicoesAprendidas_Projeto">
+    <End Type="BaseDeConhecimentoModel.Projeto" Role="Projeto" Multiplicity="0..1" />
+    <End Type="BaseDeConhecimentoModel.LicoesAprendidas" Role="LicoesAprendidas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="idProjeto" />
+      </Principal>
+      <Dependent Role="LicoesAprendidas">
+        <PropertyRef Name="idProjeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requisito_Projeto">
+    <End Type="BaseDeConhecimentoModel.Projeto" Role="Projeto" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BaseDeConhecimentoModel.Requisito" Role="Requisito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="idProjeto" />
+      </Principal>
+      <Dependent Role="Requisito">
+        <PropertyRef Name="idProjeto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
