@@ -21,11 +21,6 @@ namespace BaseDeConhecimento.Controllers
 
         public ActionResult Salvar(FormCollection dadosProjeto)
         {
-            //ProjetoDTO projetoDto = new ProjetoDTO() { custoPrevisto = decimal.Parse(dadosProjeto["custoPrevisto"]), 
-            //    custoReal = decimal.Parse(dadosProjeto["custoReal"]),
-            //    dataFim = DateTime.Parse(dadosProjeto["dataFim"], CultureInfo.CreateSpecificCulture("pt-br")), 
-            //    dataInicio = DateTime.Parse(dadosProjeto["dataFim"], CultureInfo.CreateSpecificCulture("pt-br")};
-
             ProjetoDTO projetoDto = new ProjetoDTO()
             {
                 custoPrevisto = dadosProjeto["custoPrevisto"],
@@ -40,7 +35,7 @@ namespace BaseDeConhecimento.Controllers
 
             ProjetoBO.Salvar(projetoDto);
             
-            return View("Sucesso","Shared");
+            return View("Sucesso");
         }
 
         public ActionResult Listar()

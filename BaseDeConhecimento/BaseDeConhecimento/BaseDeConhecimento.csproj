@@ -122,10 +122,15 @@
       <DependentUpon>Base.edmx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ColaboradorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjetoController.cs" />
+    <Compile Include="Controllers\RequisitoController.cs" />
+    <Compile Include="Controllers\TecnologiaController.cs" />
     <Compile Include="Dtos\ColaboradorDTO.cs" />
     <Compile Include="Dtos\ProjetoDTO.cs" />
+    <Compile Include="Dtos\RequisitoDTO.cs" />
+    <Compile Include="Dtos\TecnologiaDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -133,8 +138,10 @@
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ColaboradorBO.cs" />
     <Compile Include="Models\ProjetoBO.cs" />
-    <Compile Include="Models\Requisito.cs" />
+    <Compile Include="Models\RequisitoBO.cs" />
+    <Compile Include="Models\TecnologiaBO.cs" />
     <Compile Include="Notas.cs">
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
@@ -260,6 +267,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Views\Projeto.js" />
+    <Content Include="Scripts\Views\Requisito.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -292,9 +300,15 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Projeto\Cadastrar.cshtml" />
-    <Content Include="Views\Projeto\Cad.cshtml" />
     <Content Include="Views\Shared\Sucesso.cshtml" />
     <Content Include="Views\Projeto\Listar.cshtml" />
+    <Content Include="Views\Colaborador\Index.cshtml" />
+    <Content Include="Views\Colaborador\Cadastrar.cshtml" />
+    <Content Include="Views\Tecnologia\Index.cshtml" />
+    <Content Include="Views\Tecnologia\Cadastrar.cshtml" />
+    <Content Include="Views\Requisito\Index.cshtml" />
+    <Content Include="Views\Requisito\Cadastrar.cshtml" />
+    <Content Include="Views\Requisito\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

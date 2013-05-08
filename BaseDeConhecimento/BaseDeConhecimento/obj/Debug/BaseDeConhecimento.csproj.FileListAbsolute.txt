@@ -19,3 +19,24 @@ c:\users\diana.costa\documents\visual studio 2012\Projects\BaseDeConhecimento\Ba
 c:\users\diana.costa\documents\visual studio 2012\Projects\BaseDeConhecimento\BaseDeConhecimento\obj\Debug\BaseDeConhecimento.csprojResolveAssemblyReference.cache
 c:\users\diana.costa\documents\visual studio 2012\Projects\BaseDeConhecimento\BaseDeConhecimento\obj\Debug\BaseDeConhecimento.dll
 c:\users\diana.costa\documents\visual studio 2012\Projects\BaseDeConhecimento\BaseDeConhecimento\obj\Debug\BaseDeConhecimento.pdb
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\BaseDeConhecimento.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\BaseDeConhecimento.pdb
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\EntityFramework.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.Helpers.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.Mvc.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.Providers.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.Razor.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.WebPages.Deployment.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.WebPages.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.WebPages.Razor.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\EntityFramework.xml
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.Helpers.xml
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.Mvc.xml
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.Razor.xml
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.WebPages.xml
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.WebPages.Deployment.xml
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\bin\System.Web.WebPages.Razor.xml
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\obj\Debug\BaseDeConhecimento.csprojResolveAssemblyReference.cache
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\obj\Debug\BaseDeConhecimento.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento\obj\Debug\BaseDeConhecimento.pdb

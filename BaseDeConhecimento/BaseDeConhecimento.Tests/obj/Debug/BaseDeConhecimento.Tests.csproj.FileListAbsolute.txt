@@ -8,3 +8,13 @@ C:\Users\diana.costa\Documents\Visual Studio 2012\Projects\BaseDeConhecimento\Ba
 C:\Users\diana.costa\Documents\Visual Studio 2012\Projects\BaseDeConhecimento\BaseDeConhecimento.Tests\obj\Debug\BaseDeConhecimento.Tests.csprojResolveAssemblyReference.cache
 C:\Users\diana.costa\Documents\Visual Studio 2012\Projects\BaseDeConhecimento\BaseDeConhecimento.Tests\obj\Debug\BaseDeConhecimento.Tests.dll
 C:\Users\diana.costa\Documents\Visual Studio 2012\Projects\BaseDeConhecimento\BaseDeConhecimento.Tests\obj\Debug\BaseDeConhecimento.Tests.pdb
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento.Tests\bin\Debug\BaseDeConhecimento.Tests.dll.config
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento.Tests\bin\Debug\BaseDeConhecimento.Tests.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento.Tests\bin\Debug\BaseDeConhecimento.Tests.pdb
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento.Tests\bin\Debug\BaseDeConhecimento.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento.Tests\bin\Debug\EntityFramework.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento.Tests\bin\Debug\BaseDeConhecimento.pdb
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento.Tests\bin\Debug\EntityFramework.xml
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento.Tests\obj\Debug\BaseDeConhecimento.Tests.csprojResolveAssemblyReference.cache
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento.Tests\obj\Debug\BaseDeConhecimento.Tests.dll
+C:\Users\diana.costa\Documents\GitHub\monografia\BaseDeConhecimento\BaseDeConhecimento.Tests\obj\Debug\BaseDeConhecimento.Tests.pdb

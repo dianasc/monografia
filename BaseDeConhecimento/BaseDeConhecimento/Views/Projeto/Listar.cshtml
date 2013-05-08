@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<BaseDeConhecimento.Dtos.ProjetoDTO>
-
 @{
     ViewBag.Title = "Listar2";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,71 +11,63 @@
 </p>
 <table>
     <tr>
-        <th>
-            
+        <th></th>
+        <th>Título
         </th>
-        <th>
-            Título
+        <th>Descrição
         </th>
-        <th>
-            Descrição
+        <th>Data prevista inicio
         </th>
-        <th>
-            Data prevista inicio
+        <th>Data prevista término
         </th>
-        <th>
-            Data prevista término
+        <th>Custo previsto
         </th>
-        <th>
-            Custo previsto
+        <th>Custo real
         </th>
-        <th>
-            Custo real
+        <th>Data inicio
         </th>
-        <th>
-            Data inicio
-        </th>
-        <th>
-            Data fim
+        <th>Data fim
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idProjeto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.titulo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataPrevistaInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataPrevistaTermino)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.custoPrevisto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.custoReal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataFim)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idProjeto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataPrevistaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataPrevistaTermino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.custoPrevisto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.custoReal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataFim)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Requisitos", "Index", "Requisito", new { id = item.idProjeto }, null)
+            </td>
+        </tr>
+    }
 
 </table>

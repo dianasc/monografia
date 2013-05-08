@@ -79,7 +79,7 @@ namespace BaseDeConhecimento.Models
                 return projetos;
             }
 
-            return new List<ProjetoDTO>();
+          
         }
 
 

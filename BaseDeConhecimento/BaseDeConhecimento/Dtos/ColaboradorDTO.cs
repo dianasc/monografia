@@ -11,11 +11,11 @@ namespace BaseDeConhecimento.Dtos
         
         public int idUsuario { get; set; }
         
-        [Required]
+        [Required(ErrorMessage="Informe o nome do colaborador.")]
         [Display(Name = "Nome")]
         public string nome { get; set; }
 
-        [Required]
+        [Required(ErrorMessage="Informe o e-mail do colaborador.")]
         [Display(Name = "E-mail")]
         public string email { get; set; }
     }
