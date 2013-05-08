@@ -11,7 +11,6 @@ namespace BaseDeConhecimento
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     using System.EnterpriseServices;
 
     public partial class Projeto
@@ -26,29 +25,21 @@ namespace BaseDeConhecimento
         }
 
         public int idProjeto { get; set; }
-        [Required(ErrorMessage="Informe o título do projeto")]
-        [Display(Name = "Título")]
+
         public string titulo { get; set; }
-        [Required(ErrorMessage="Informe a descrição do projeto")]
-        [Display(Name = "Descrição")]
+
         public string descricao { get; set; }
 
-        [Display(Name = "Data de previsão início")]
         public Nullable<System.DateTime> dataPrevistaInicio { get; set; }
 
-        [Display(Name = "Data de previsão término")]
         public Nullable<System.DateTime> dataPrevistaTermino { get; set; }
 
-        [Display(Name = "Custo previsto")]
         public Nullable<decimal> custoPrevisto { get; set; }
 
-        [Display(Name = "Custo real")]
         public Nullable<decimal> custoReal { get; set; }
 
-        [Display(Name = "Data início")]
         public Nullable<System.DateTime> dataInicio { get; set; }
 
-        [Display(Name = "Data fim")]
         public Nullable<System.DateTime> dataFim { get; set; }
 
         public virtual ICollection<AspectosPorProjeto> AspectosPorProjeto { get; set; }

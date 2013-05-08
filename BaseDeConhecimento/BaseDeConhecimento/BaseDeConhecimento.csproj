@@ -122,11 +122,13 @@
       <DependentUpon>Base.edmx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AtividadeController.cs" />
     <Compile Include="Controllers\ColaboradorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjetoController.cs" />
     <Compile Include="Controllers\RequisitoController.cs" />
     <Compile Include="Controllers\TecnologiaController.cs" />
+    <Compile Include="Dtos\AtividadeDTO.cs" />
     <Compile Include="Dtos\ColaboradorDTO.cs" />
     <Compile Include="Dtos\ProjetoDTO.cs" />
     <Compile Include="Dtos\RequisitoDTO.cs" />
@@ -138,6 +140,7 @@
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AtividadeBO.cs" />
     <Compile Include="Models\ColaboradorBO.cs" />
     <Compile Include="Models\ProjetoBO.cs" />
     <Compile Include="Models\RequisitoBO.cs" />
@@ -309,6 +312,7 @@
     <Content Include="Views\Requisito\Index.cshtml" />
     <Content Include="Views\Requisito\Cadastrar.cshtml" />
     <Content Include="Views\Requisito\Editar.cshtml" />
+    <Content Include="Views\Atividade\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<BaseDeConhecimento.Dtos.AtividadeDTO>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nova atividade", "Cadastrar")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>Nome
+        </th>
+        <th>Descricao
+        </th>
+        <th>Tempo estimado
+        </th>
+        <th>Tempo de execucao
+        </th>
+        <th>Complexidade
+        </th>
+        <th>Escala de importância
+        </th>
+        <th></th>
+    </tr>
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idAtividade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tempoEstimado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tempoExecucao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.complexidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.escalaDeImportancia)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+        }
+    }
+
+</table>

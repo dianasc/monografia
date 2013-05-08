@@ -17,6 +17,8 @@ namespace BaseDeConhecimento.Dtos
 
         [Required(ErrorMessage="Informe o e-mail do colaborador.")]
         [Display(Name = "E-mail")]
+        [DataType(DataType.EmailAddress)]
+        [EmailAddress]
         public string email { get; set; }
     }
 }
