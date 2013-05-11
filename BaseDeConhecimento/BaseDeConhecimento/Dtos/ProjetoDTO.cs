@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
+using BaseDeConhecimento.Models;
 
 namespace BaseDeConhecimento.Dtos
 {
@@ -34,5 +36,13 @@ namespace BaseDeConhecimento.Dtos
 
         [Display(Name = "Data fim")]
         public string dataFim { get; set; }
+        
+        [Display(Name = "Aspecto")]
+        public string aspecto { get; set; }
+
+        [Display(Name = "Valor atribuído")]
+        public string valorAspecto { get; set; }
+
+   
     }
 }

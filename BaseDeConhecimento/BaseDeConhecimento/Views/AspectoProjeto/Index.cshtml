@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BaseDeConhecimento.Dtos.AspectoProjetoDTO>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Cadastrar", new { id = ViewBag.idProjeto })
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>descricaoAspecto
+        </th>
+
+        <th>nomeProjeto
+        </th>
+        <th>valorAspecto
+        </th>
+        <th></th>
+    </tr>
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.HiddenFor(modelItem => item.idAspecto)
+                @Html.DisplayFor(modelItem => item.idProjeto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricaoAspecto)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeProjeto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valorAtribuido)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+        }
+    }
+</table>

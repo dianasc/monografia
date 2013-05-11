@@ -17,7 +17,7 @@ namespace BaseDeConhecimento
         public int idProjeto { get; set; }
         public int idAspecto { get; set; }
         public Nullable<int> prioridade { get; set; }
-        public Nullable<decimal> peso { get; set; }
+        public decimal pesoAtribuido { get; set; }
     
         public virtual Aspectos Aspectos { get; set; }
         public virtual Projeto Projeto { get; set; }

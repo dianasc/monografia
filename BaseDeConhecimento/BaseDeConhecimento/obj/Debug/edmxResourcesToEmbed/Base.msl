@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Aspectos">
       <EntityTypeMapping TypeName="BaseDeConhecimentoModel.Aspectos">
         <MappingFragment StoreEntitySet="Aspectos">
+          <ScalarProperty Name="peso" ColumnName="peso" />
           <ScalarProperty Name="idAspecto" ColumnName="idAspecto" />
           <ScalarProperty Name="codigoIdentificacao" ColumnName="codigoIdentificacao" />
           <ScalarProperty Name="tipo" ColumnName="tipo" />
@@ -14,10 +15,10 @@
     <EntitySetMapping Name="AspectosPorProjeto">
       <EntityTypeMapping TypeName="BaseDeConhecimentoModel.AspectosPorProjeto">
         <MappingFragment StoreEntitySet="AspectosPorProjeto">
+          <ScalarProperty Name="pesoAtribuido" ColumnName="pesoAtribuido" />
           <ScalarProperty Name="idProjeto" ColumnName="idProjeto" />
           <ScalarProperty Name="idAspecto" ColumnName="idAspecto" />
           <ScalarProperty Name="prioridade" ColumnName="prioridade" />
-          <ScalarProperty Name="peso" ColumnName="peso" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BaseDeConhecimento.Dtos.AspectoDTO>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Novo aspecto", "Cadastrar")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>codigoIdentificacao
+        </th>
+        <th>descricao
+        </th>
+        <th>peso
+        </th>
+        <th></th>
+    </tr>
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idAspecto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigoIdentificacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.peso)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+        }
+    }
+
+</table>

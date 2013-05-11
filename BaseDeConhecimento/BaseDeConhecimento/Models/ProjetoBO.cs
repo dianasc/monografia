@@ -82,6 +82,32 @@ namespace BaseDeConhecimento.Models
           
         }
 
+        public static ProjetoDTO GetPorId(int idProjeto)
+        {
+            using (BaseDeConhecimentoEntities contexto = new BaseDeConhecimentoEntities())
+            {
+                var projetos = (from p in contexto.Projeto.AsEnumerable()
+                                where p.idProjeto == idProjeto
+                                select new ProjetoDTO
+                                {
+                                    idProjeto = p.idProjeto,
+                                    titulo = p.titulo,
+                                    descricao = p.descricao,
+                                    dataPrevistaTermino = p.dataPrevistaTermino.ToString(),
+                                    dataPrevistaInicio = p.dataPrevistaInicio.ToString(),
+                                    dataInicio = p.dataInicio.ToString(),
+                                    dataFim = p.dataFim.ToString(),
+                                    custoReal = p.custoReal.ToString(),
+                                    custoPrevisto = p.custoPrevisto.ToString()
+
+                                }).First();
+
+                return projetos;
+            }
+
+
+        }
+
 
     }
 }

@@ -23,6 +23,7 @@ namespace BaseDeConhecimento
         public string codigoIdentificacao { get; set; }
         public Nullable<int> tipo { get; set; }
         public string descricao { get; set; }
+        public Nullable<double> peso { get; set; }
     
         public virtual ICollection<AspectosPorProjeto> AspectosPorProjeto { get; set; }
     }

@@ -80,6 +80,7 @@
           <Property Name="codigoIdentificacao" Type="nchar" MaxLength="10" />
           <Property Name="tipo" Type="int" />
           <Property Name="descricao" Type="nchar" MaxLength="10" />
+          <Property Name="peso" Type="float" />
         </EntityType>
         <EntityType Name="AspectosPorProjeto">
           <Key>
@@ -89,7 +90,7 @@
           <Property Name="idProjeto" Type="int" Nullable="false" />
           <Property Name="idAspecto" Type="int" Nullable="false" />
           <Property Name="prioridade" Type="int" />
-          <Property Name="peso" Type="decimal" />
+          <Property Name="pesoAtribuido" Type="decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="Atividades">
           <Key>
@@ -444,6 +445,7 @@
           <Property Name="tipo" Type="Int32" />
           <Property Name="descricao" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
           <NavigationProperty Name="AspectosPorProjeto" Relationship="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Aspectos" FromRole="Aspectos" ToRole="AspectosPorProjeto" />
+          <Property Type="Double" Name="peso" />
         </EntityType>
         <EntityType Name="AspectosPorProjeto">
           <Key>
@@ -453,9 +455,9 @@
           <Property Name="idProjeto" Type="Int32" Nullable="false" />
           <Property Name="idAspecto" Type="Int32" Nullable="false" />
           <Property Name="prioridade" Type="Int32" />
-          <Property Name="peso" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="Aspectos" Relationship="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Aspectos" FromRole="AspectosPorProjeto" ToRole="Aspectos" />
           <NavigationProperty Name="Projeto" Relationship="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Projeto" FromRole="AspectosPorProjeto" ToRole="Projeto" />
+          <Property Type="Decimal" Name="pesoAtribuido" Precision="18" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="Atividades">
           <Key>
@@ -704,6 +706,7 @@
           <EntitySetMapping Name="Aspectos">
             <EntityTypeMapping TypeName="BaseDeConhecimentoModel.Aspectos">
               <MappingFragment StoreEntitySet="Aspectos">
+                <ScalarProperty Name="peso" ColumnName="peso" />
                 <ScalarProperty Name="idAspecto" ColumnName="idAspecto" />
                 <ScalarProperty Name="codigoIdentificacao" ColumnName="codigoIdentificacao" />
                 <ScalarProperty Name="tipo" ColumnName="tipo" />
@@ -714,10 +717,10 @@
           <EntitySetMapping Name="AspectosPorProjeto">
             <EntityTypeMapping TypeName="BaseDeConhecimentoModel.AspectosPorProjeto">
               <MappingFragment StoreEntitySet="AspectosPorProjeto">
+                <ScalarProperty Name="pesoAtribuido" ColumnName="pesoAtribuido" />
                 <ScalarProperty Name="idProjeto" ColumnName="idProjeto" />
                 <ScalarProperty Name="idAspecto" ColumnName="idAspecto" />
                 <ScalarProperty Name="prioridade" ColumnName="prioridade" />
-                <ScalarProperty Name="peso" ColumnName="peso" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

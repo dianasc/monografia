@@ -66,6 +66,7 @@
     <Property Name="tipo" Type="Int32" />
     <Property Name="descricao" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
     <NavigationProperty Name="AspectosPorProjeto" Relationship="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Aspectos" FromRole="Aspectos" ToRole="AspectosPorProjeto" />
+    <Property Type="Double" Name="peso" />
   </EntityType>
   <EntityType Name="AspectosPorProjeto">
     <Key>
@@ -75,9 +76,9 @@
     <Property Name="idProjeto" Type="Int32" Nullable="false" />
     <Property Name="idAspecto" Type="Int32" Nullable="false" />
     <Property Name="prioridade" Type="Int32" />
-    <Property Name="peso" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="Aspectos" Relationship="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Aspectos" FromRole="AspectosPorProjeto" ToRole="Aspectos" />
     <NavigationProperty Name="Projeto" Relationship="BaseDeConhecimentoModel.FK_AspectosPorProjeto_Projeto" FromRole="AspectosPorProjeto" ToRole="Projeto" />
+    <Property Type="Decimal" Name="pesoAtribuido" Precision="18" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="Atividades">
     <Key>

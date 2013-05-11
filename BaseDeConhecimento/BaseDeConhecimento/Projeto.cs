@@ -11,8 +11,7 @@ namespace BaseDeConhecimento
 {
     using System;
     using System.Collections.Generic;
-    using System.EnterpriseServices;
-
+    
     public partial class Projeto
     {
         public Projeto()
@@ -23,25 +22,17 @@ namespace BaseDeConhecimento
             this.LicoesAprendidas = new HashSet<LicoesAprendidas>();
             this.Requisito = new HashSet<Requisito>();
         }
-
+    
         public int idProjeto { get; set; }
-
         public string titulo { get; set; }
-
         public string descricao { get; set; }
-
         public Nullable<System.DateTime> dataPrevistaInicio { get; set; }
-
         public Nullable<System.DateTime> dataPrevistaTermino { get; set; }
-
         public Nullable<decimal> custoPrevisto { get; set; }
-
         public Nullable<decimal> custoReal { get; set; }
-
         public Nullable<System.DateTime> dataInicio { get; set; }
-
         public Nullable<System.DateTime> dataFim { get; set; }
-
+    
         public virtual ICollection<AspectosPorProjeto> AspectosPorProjeto { get; set; }
         public virtual ICollection<TecnologiaPorUsuario> TecnologiaPorUsuario { get; set; }
         public virtual ICollection<Tags> Tags { get; set; }

@@ -19,6 +19,11 @@ namespace BaseDeConhecimento.Controllers
             return View("Cadastrar");
         }
 
+        public ActionResult Editar()
+        {
+            return View();
+        }
+
         public ActionResult Salvar(FormCollection dadosProjeto)
         {
             ProjetoDTO projetoDto = new ProjetoDTO()

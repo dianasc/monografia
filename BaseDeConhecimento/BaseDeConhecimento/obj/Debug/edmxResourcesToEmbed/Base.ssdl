@@ -75,6 +75,7 @@
     <Property Name="codigoIdentificacao" Type="nchar" MaxLength="10" />
     <Property Name="tipo" Type="int" />
     <Property Name="descricao" Type="nchar" MaxLength="10" />
+    <Property Name="peso" Type="float" />
   </EntityType>
   <EntityType Name="AspectosPorProjeto">
     <Key>
@@ -84,7 +85,7 @@
     <Property Name="idProjeto" Type="int" Nullable="false" />
     <Property Name="idAspecto" Type="int" Nullable="false" />
     <Property Name="prioridade" Type="int" />
-    <Property Name="peso" Type="decimal" />
+    <Property Name="pesoAtribuido" Type="decimal" Nullable="false" />
   </EntityType>
   <EntityType Name="Atividades">
     <Key>

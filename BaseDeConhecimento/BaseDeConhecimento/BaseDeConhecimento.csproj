@@ -122,12 +122,16 @@
       <DependentUpon>Base.edmx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AspectoController.cs" />
+    <Compile Include="Controllers\AspectoProjetoController.cs" />
     <Compile Include="Controllers\AtividadeController.cs" />
     <Compile Include="Controllers\ColaboradorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjetoController.cs" />
     <Compile Include="Controllers\RequisitoController.cs" />
     <Compile Include="Controllers\TecnologiaController.cs" />
+    <Compile Include="Dtos\AspectoDTO.cs" />
+    <Compile Include="Dtos\AspectoProjetoDTO.cs" />
     <Compile Include="Dtos\AtividadeDTO.cs" />
     <Compile Include="Dtos\ColaboradorDTO.cs" />
     <Compile Include="Dtos\ProjetoDTO.cs" />
@@ -140,6 +144,7 @@
       <DependentUpon>Base.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AspectoBO.cs" />
     <Compile Include="Models\AtividadeBO.cs" />
     <Compile Include="Models\ColaboradorBO.cs" />
     <Compile Include="Models\ProjetoBO.cs" />
@@ -169,6 +174,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\jquery-ui\cupertino\images\animated-overlay.gif" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\jquery-ui\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui\cupertino\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Content\jquery-ui\cupertino\jquery-ui-1.10.3.custom.min.css" />
     <Content Include="Content\jquery-ui\ui-lightness\images\animated-overlay.gif" />
     <Content Include="Content\jquery-ui\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Content\jquery-ui\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
@@ -313,6 +335,10 @@
     <Content Include="Views\Requisito\Cadastrar.cshtml" />
     <Content Include="Views\Requisito\Editar.cshtml" />
     <Content Include="Views\Atividade\Index.cshtml" />
+    <Content Include="Views\Aspecto\Index.cshtml" />
+    <Content Include="Views\Aspecto\Cadastrar.cshtml" />
+    <Content Include="Views\AspectoProjeto\Index.cshtml" />
+    <Content Include="Views\AspectoProjeto\Cadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
