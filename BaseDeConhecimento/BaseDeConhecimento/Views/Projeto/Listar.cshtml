@@ -62,9 +62,8 @@
                 @Html.DisplayFor(modelItem => item.dataFim)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Requisitos", "Index", "Requisito", new { id = item.idProjeto }, null)
-                @Html.ActionLink("Usuários/Tecnologia", "Index", "UsuarioPorTecnologia", new { id = item.idProjeto }, null)
+                @Html.ActionLink("Requisitos", "Index", "Requisito", new { id = item.idProjeto }, null) |
+                @Html.ActionLink("Usuários/Tecnologia", "Index", "UsuarioPorTecnologia", new { id = item.idProjeto }, null) |
                 @Html.ActionLink("Aspectos", "Index", "AspectoProjeto", new { id = item.idProjeto }, null)
             </td>
         </tr>

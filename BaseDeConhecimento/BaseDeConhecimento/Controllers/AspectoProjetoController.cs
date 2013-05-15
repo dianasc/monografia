@@ -16,7 +16,7 @@ namespace BaseDeConhecimento.Controllers
         public ActionResult Index(int id)
         {
             ViewBag.idProjeto = id;
-            return View();
+            return View(AspectoBO.getAspectosPorProjeto(id));
         }
 
         public ActionResult Cadastrar(int id)
@@ -31,14 +31,18 @@ namespace BaseDeConhecimento.Controllers
         {
             string[] vetorIdAspecto = dadosAspecto["hdIdAspecto[]"].Split(',');
             string[] vetorValorAspecto = dadosAspecto["hdValorAspecto[]"].Split(',');
+            string[] vetorPrioridade = dadosAspecto["hdPrioridade[]"].Split(',');
+
             List<AspectoProjetoDTO> aspectoProjeto = new List<AspectoProjetoDTO>();
 
             for (int i = 0; i < vetorIdAspecto.Count(); i++)
             {
-                aspectoProjeto.Add(new AspectoProjetoDTO() { idProjeto = dadosAspecto["idProjeto"], idAspecto = vetorIdAspecto[i], valorAtribuido = vetorValorAspecto[i] });
+                aspectoProjeto.Add(new AspectoProjetoDTO() { idProjeto = dadosAspecto["idProjeto"], idAspecto = vetorIdAspecto[i], valorAtribuido = vetorValorAspecto[i], prioridade = vetorPrioridade[i] });
             }
 
+            
             AspectoBO.adicionarAspectoPorProjeto(aspectoProjeto);
+            ViewBag.Destino = string.Concat(HttpContext.Request.Url.Scheme, "://", HttpContext.Request.Url.Authority, "/AspectoProjeto/Index/", int.Parse(dadosAspecto["idProjeto"]));
             return View("Sucesso");
         }
     }

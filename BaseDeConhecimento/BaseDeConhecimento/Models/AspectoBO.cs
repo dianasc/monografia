@@ -56,13 +56,44 @@ namespace BaseDeConhecimento.Models
                         idAspecto = int.Parse(item.idAspecto),
                         idProjeto = int.Parse(item.idProjeto),
                         prioridade = int.Parse(item.prioridade),
-                        pesoAtribuido = Convert.ToDecimal("3,5")
+                        pesoAtribuido = pesoAtr
                     };
-
-                    contexto.SaveChanges();
+                    
+                    try
+                    {
+                        contexto.AspectosPorProjeto.Add(aspectoProjeto);
+                        contexto.SaveChanges();
+                    }
+                    catch (Exception)
+                    {
+                        
+                        throw;
+                    }
+                    
                 }
             }
 
+        }
+
+        public static List<AspectoProjetoDTO> getAspectosPorProjeto(int idProjeto)
+        {
+            using (BaseDeConhecimentoEntities context = new BaseDeConhecimentoEntities())
+            {
+                var result = (from a in context.AspectosPorProjeto.AsEnumerable()
+                              where a.idProjeto == idProjeto
+                              select new AspectoProjetoDTO
+                              {
+                                  descricaoAspecto = a.Aspectos.descricao,
+                                  idAspecto = a.idAspecto.ToString(),
+                                  idProjeto = a.idProjeto.ToString(),
+                                  nomeProjeto = a.Projeto.titulo,
+                                  prioridade = a.prioridade.ToString(),
+                                  valorAtribuido = a.pesoAtribuido.ToString()
+                              }).ToList();
+
+                return result;
+            }
+            
         }
 
     }
